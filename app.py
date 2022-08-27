@@ -8,7 +8,7 @@ from PIL import Image
 app = Flask(__name__)
 
 def predict(values, dic):
-    if len(values) == 18:
+    if len(values) == 8:
         model = pickle.load(open('Chronic_kidney_File.pkl','rb'))
         values = np.asarray(values)
         return model.predict(values.reshape(1, -1))[0]
